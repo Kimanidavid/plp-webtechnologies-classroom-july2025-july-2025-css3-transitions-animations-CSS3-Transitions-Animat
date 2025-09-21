@@ -1,0 +1,148 @@
+.btn {
+    background-color: green;
+    color:aliceblue;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;   
+    transition: background-color 0.5s ease, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: darkblue;
+    transform: scale(1.2); /* slightly increase size on hover*/
+}
+
+.box{
+    background: rgb(80, 80, 153);
+    border-radius: 8%;
+    width: 100px;
+    height: 100px;
+    margin: 0% auto;
+    cursor: pointer;
+    line-height: 100px;
+    text-align: center;
+    transition-property: background;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;    
+}
+.box:hover{
+    background: rgb(18, 148, 235);
+}
+
+img{
+    width: 400px;
+    height: 300px;
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s;
+}
+
+
+.balls {
+    position: relative;
+    width: 220px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.ball {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: red;
+    top: 10px;
+    left: 0;
+}
+
+#ball1 {
+    animation: snake-move 2s infinite ease-in-out;
+    z-index: 3;
+}
+#ball2 {
+    left: 70px;
+    animation: snake-move 2s infinite ease-in-out;
+    animation-delay: 0.3s;
+    background: orange;
+    z-index: 2;
+}
+#ball3 {
+    left: 140px;
+    animation: snake-move 2s infinite ease-in-out;
+    animation-delay: 0.6s;
+    background: yellow;
+    z-index: 1;
+}
+
+@keyframes snake-move {
+    0%, 100% {
+        top: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    25% {
+        top: -30px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    50% {
+        top: 40px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    75% {
+        top: -10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+}
+
+.stage{
+    width: 100%;
+    height: 400px;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+    background: lightblue;
+}
+.stage:hover .ball-two{
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.polygon{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid purple;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.polygon:hover{
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        border-bottom-color: purple;
+    }
+    33% {
+        border-bottom-color: maroon;
+    }
+    66% {
+        border-bottom-color: pink;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-bottom-color: purple;
+    }
+}
+
+.polygon:hover {
+    animation: rotate 1.5s linear infinite;
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
